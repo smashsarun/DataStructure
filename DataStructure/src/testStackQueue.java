@@ -11,14 +11,14 @@
 public class testStackQueue {
         public static void main(String[] args) {
         //stack
-        StackQueue.StackQueueIm<Integer> st = new StackQueue.StackQueueIm<Integer>(); //generic โดยเรียกเป็น int
+        StackQueue<Integer> st = new StackQueue<Integer>(); //generic โดยเรียกเป็น int
         st.push(5);
         st.push(8);
         st.push(2);
+        st.pop();
 
+                
         System.out.println(st.peek());
-        System.out.println(st.size());
-            System.out.println(st.isEmpty());
 
     }
 }

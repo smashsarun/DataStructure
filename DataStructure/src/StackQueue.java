@@ -5,15 +5,17 @@ import java.util.Stack;
  *
  * @author SARUNSUMETPANICH
  */
-public class StackQueue {
+public class StackQueue<E> implements StackInterface<E>, QueueInterface<E>{
 
-    public static class StackQueueIm<E> implements StackInterface<E>, QueueInterface<E> {
 
         int top;
         int arr[] = new int[1000]; // Maximum size of Stack 
 
-        public E pop() { //stack
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        public int pop() { //stack
+           int pop = arr[top];
+           arr[top] = 55; //แก้
+           top--; //ลดค่า top
+           return pop;
         }
 
         @Override
@@ -33,7 +35,7 @@ public class StackQueue {
             boolean result = true;
             for (int i = 0; i < arr.length; i++) {
                 if (arr != null) {
-                    if (arr[i] != null) {
+                    if (arr[i] != null) { //Why
                         System.out.println("IN");
                         result = false;
                         return result;
@@ -48,7 +50,9 @@ public class StackQueue {
         public int size() { //both
             int count = 0;
             for (int i = 0; i < arr.length; i++) {
-                //ยังใช้ไม่ได้
+                if (arr[i] != null) { //Why
+                    count++;
+                }
             }
             return count;
         }
@@ -79,5 +83,3 @@ public class StackQueue {
         }
 
     }
-
-}

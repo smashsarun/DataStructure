@@ -1,7 +1,7 @@
 
 public interface StackInterface<E> {
 
-    public E pop();
+    public int pop();
 
     public void push(int e);
 

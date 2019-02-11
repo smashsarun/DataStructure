@@ -15,12 +15,11 @@ public class NewClass {
 
 //a stack of integers
         Stack<Integer> st = new Stack<Integer>();
-        st.push((1));
-//        st.push((5));
-//        st.push((2));
-//print the top
+        System.out.println("push"+st.push(2));
+        st.push((54));
+        st.push(10);
+        System.out.println("pop "+st.pop());
         System.out.println(st.peek());
-        st.pop();
         System.out.println(st.isEmpty());
     }
 }
