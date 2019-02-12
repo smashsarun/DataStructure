@@ -11,7 +11,7 @@ public interface QueueInterface<E> {
 
     public E dequeue();
 
-    public void enqueue(AnyType e);
+    public void enqueue(E e);
 
     public void clear();
     

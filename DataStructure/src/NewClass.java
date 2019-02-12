@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -21,5 +23,16 @@ public class NewClass {
         System.out.println("pop "+st.pop());
         System.out.println(st.peek());
         System.out.println(st.isEmpty());
+        
+        System.out.println("----");
+        
+        Queue<Integer> qu = new LinkedList<Integer>();
+        System.out.println(qu.isEmpty());
+        System.out.println(qu.add(5));
+        System.out.println(qu.add(12));
+        System.out.println(qu.size());
+        qu.clear();
+        System.out.println(qu.size());
+        
     }
 }

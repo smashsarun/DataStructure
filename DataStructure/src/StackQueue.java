@@ -5,81 +5,101 @@ import java.util.Stack;
  *
  * @author SARUNSUMETPANICH
  */
-public class StackQueue<E> implements StackInterface<E>, QueueInterface<E>{
+public class StackQueue<E> implements StackInterface<E>, QueueInterface<E> {
 
+    private int size = 0;
+    private E arr[];
 
-        int top;
-        int arr[] = new int[1000]; // Maximum size of Stack 
+    public StackQueue() {
+        arr = (E[]) new Object[1000];
+    }
 
-        public int pop() { //stack
-           int pop = arr[top];
-           arr[top] = 55; //แก้
-           top--; //ลดค่า top
-           return pop;
-        }
-
-        @Override
-        public void push(int e) { //stack
-            arr[++top] = e;
-            System.out.println(e + " pushed");
-
-        }
-
-        @Override
-        public int peek() { //stack
-            return arr[top];
-        }
-
-        @Override
-        public boolean isEmpty() { //both
-            boolean result = true;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr != null) {
-                    if (arr[i] != null) { //Why
-                        System.out.println("IN");
-                        result = false;
-                        return result;
-                    }
-                }
-
-            }
-            return result;
-        }
-
-        @Override
-        public int size() { //both
-            int count = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] != null) { //Why
-                    count++;
-                }
-            }
-            return count;
-        }
-
-        @Override
-        public E top() { //stack
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public E getFront() { //queue
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public E dequeue() { //queue
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void enqueue(AnyType e) { //queue
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void clear() { //queue
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public E pop() { //stack
+        if (size == 0) {
+            return null;
+        } else {
+            E pop = arr[size - 1];
+            arr[size - 1] = null; //แก้ค่าออก
+            size--; //ลดค่า size
+            return pop;
         }
 
     }
+
+    @Override
+    public void push(E e) { //stack
+        if (size < arr.length) {
+            size++;
+            arr[size - 1] = e;
+            System.out.println(e + " pushed");
+        } else {
+            System.out.println("! Stack is full !");
+        }
+
+    }
+
+    @Override
+    public E peek() { //stack
+        if (size == 0) {            
+            return null;
+        } else {
+            return arr[size - 1];
+        }
+    }
+
+    @Override
+    public boolean isEmpty() { //both
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int size() { //both
+        return size;
+    }
+
+    @Override
+    public E getFront() { //queue
+        return arr[0];
+    }
+
+    @Override
+    public E dequeue() { //queue*
+        if (size != 0) {
+            E value = arr[0];
+            for (int i = 0; i < size; i++) {
+                arr[i] = arr[i+1];
+            }
+            arr[size] = null;
+            size--;
+            return value;
+        } else { //ถ้าว่าง
+            return null;
+        }
+    }
+
+    @Override
+    public void enqueue(E e) { //queue
+        if (size <= 1000) {
+            size++;
+            arr[size - 1] = e;
+            System.out.println(e + " enqueued");
+        } else {
+            System.out.println("! Stack is full !");
+        }
+
+    }
+
+    @Override
+    public void clear() { //queue
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = null;
+            size = 0;
+        }
+    }
+
+}

@@ -1,15 +1,14 @@
 
 public interface StackInterface<E> {
 
-    public int pop();
+    public E pop();
 
-    public void push(int e);
+    public void push(E e);
 
-    public int peek();
+    public E peek();
 
     public boolean isEmpty();
     
     public int size();
-    
-    public E top(); 
+
 }
