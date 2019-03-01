@@ -1,0 +1,16 @@
+NetBeans IDE and NetBeans Platform are based on software from netbeans.org, 
+which has been dual licensed under the Common Development 
+and Distribution License (CDDL) and the GNU General Public License version 2
+ with Classpath exception.
+ For more information, please visit www.netbeans.org.
+
+If you became concerned about a mole on your back — perhaps it had become painful
+ or looked unsightly — your doctor might decide to remove it and have it evaluated.
+ She’d send it to a pathology lab, where a sample of the tissue would be prepared
+ in the form of a slide. It would then be sent to a pathologist,
+ who would examine the slide to determine whether the tissue had 
+any problematic elements, like cancer. After taking a look, 
+the pathologist might ship it to a specialist at another lab for
+ a second opinion. Each time the slide is moved, it is packed up and
+ shipped to a different address. All the while, you’re waiting days
+ or even weeks to hear whether or not you have cancer.
