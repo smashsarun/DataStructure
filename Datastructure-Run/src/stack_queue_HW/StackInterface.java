@@ -1,3 +1,5 @@
+package stack_queue_HW;
+
 
 public interface StackInterface<E> {
 
